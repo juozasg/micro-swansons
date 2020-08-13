@@ -1,0 +1,28 @@
+$primary: #f4994b;
+
+@import '~bootstrap/scss/bootstrap';
+
+.main {
+  padding-top: 20px;
+}
+
+.entity {
+  border: 14px solid rgb(170,189,153); 
+  width: 180px;
+  position: fixed;
+  top: 500px;
+  left: 500px;
+  background-color: #AABBAA;
+
+  .title {
+    text-align: center;
+    font-family: monospace;
+    margin-top: 8px;
+    color: purple;
+  }
+
+  .body { 
+    color: black;
+    
+  }
+}
