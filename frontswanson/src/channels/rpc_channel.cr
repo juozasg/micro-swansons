@@ -6,17 +6,7 @@ class RpcChannel < Amber::WebSockets::Channel
   def handle_joined(client_socket, message)
     puts "RPC joined broadcast:"
     # RpcSocket.broadcast("message", "rpc", "message_new", {"handle" => "here"})
-    spawn do
-      i = 0
-      loop do
-        i += 1
-        sleep 1.seconds
-        puts("loop bcast")
-        Swanson.rpc_spawn("yooooo")
-        break
-      end
-      
-    end
+    Swanson.start_grpc_proxy    
   end
 
   def handle_message(client_socket, message)
