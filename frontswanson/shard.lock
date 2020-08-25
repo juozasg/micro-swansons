@@ -52,6 +52,10 @@ shards:
     git: https://github.com/amberframework/granite.git
     version: 0.21.1
 
+  grpc:
+    git: https://github.com/jgaskins/grpc.git
+    version: 0.1.4
+
   i18n:
     git: https://github.com/TechMagister/i18n.cr.git
     version: 0.3.1
@@ -99,6 +103,10 @@ shards:
   pool:
     git: https://github.com/ysbaddaden/pool.git
     version: 0.2.3
+
+  protobuf:
+    git: https://github.com/jeromegn/protobuf.cr.git
+    version: 2.2.1+git.commit.0bee69cfbd6656cbe310822162baef5f593e681a
 
   quartz_mailer:
     git: https://github.com/amberframework/quartz-mailer.git

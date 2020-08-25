@@ -47,6 +47,9 @@ dependencies:
   micrate:
     github: amberframework/micrate
 
+  grpc:
+    github: jgaskins/grpc
+
 development_dependencies:
   garnet_spec:
     github: amberframework/garnet-spec
