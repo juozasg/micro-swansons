@@ -29,6 +29,7 @@ Amber::Server.configure do
 
   routes :web do
     get "/", HomeController, :index
+    websocket "/rpc", RpcSocket
   end
 
   routes :api do

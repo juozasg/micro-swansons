@@ -15,6 +15,8 @@ require "./database"
 require "./initializers/**"
 
 # Start Generator Dependencies: Don't modify.
+require "../src/sockets/**"
+require "../src/channels/**"
 require "../src/models/**"
 # End Generator Dependencies
 

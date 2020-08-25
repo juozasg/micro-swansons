@@ -1,28 +1,47 @@
-let velx = 2.3
-let vely = 1.1;
+
+const rectOutOfBound = (rect) => {
+    return rect.right < 0 || rect.bottom < 0 || rect.left > 2000 || rect.top > 2000;
+}
+
+
+const moveEntity = (e) => {
+    // console.log(e);
+
+    const velx = parseFloat(e.getAttribute('data-velx'));
+    const vely = parseFloat(e.getAttribute('data-vely'));
+
+    const rect = e.getBoundingClientRect();
+    if(rectOutOfBound(rect)) {
+        console.log('rekt');
+        e.remove();
+        return;
+    }
+
+    e.style.borderColor = `rgb(170,${rect.left % 255},153)`
+    e.style.borderWidth = ((rect.left / 30) % 26) + 'px';
+
+
+    e.style.left = (rect.left + velx) + "px";
+    e.style.top = (rect.top + vely) + 'px';
+
+    e.setAttribute('data-velx', velx + (Math.random() / 2 - 0.25));
+    e.setAttribute('data-vely', vely + (Math.random() / 2 - 0.25));
+}
 
 
 
-const moveEntity = () => {
-    const entity = document.body.querySelector(".entity");
-    const rect = entity.getBoundingClientRect();
+const moveEntities = () => {
 
-    
-    entity.style.borderColor = `rgb(170,${rect.left % 255},153)`
-    entity.style.borderWidth = ((rect.left/30) % 26) + 'px';
-    // entity.style.transform = `rotate(${-10 + rect.left % 20}deg)`;
 
-    entity.style.left = (rect.left + velx) + "px";
-    entity.style.top = rect.top + vely + 'px';
+    document.body.querySelectorAll('.entity').forEach((e) => {
+        // console.log(e)
+        moveEntity(e);
+    });
 
-    velx = velx + (Math.random() / 2 - 0.25);
-    // console.log(velx)
-    vely = vely + (Math.random() / 2 - 0.25);
-    // console.log(entity.style);
 }
 
 window.addEventListener('load', (e) => {
     setInterval(() => {
-        moveEntity();
+        moveEntities();
     }, 10);
 })
