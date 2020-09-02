@@ -52,10 +52,6 @@ shards:
     git: https://github.com/amberframework/granite.git
     version: 0.21.1
 
-  grpc:
-    git: https://github.com/jgaskins/grpc.git
-    version: 0.1.4
-
   i18n:
     git: https://github.com/TechMagister/i18n.cr.git
     version: 0.3.1
@@ -92,6 +88,10 @@ shards:
     git: https://github.com/crystal-lang/crystal-mysql.git
     version: 0.11.2
 
+  nats:
+    git: https://github.com/nats-io/nats.cr.git
+    version: 0.0.2+git.commit.aa4979137c5d98fa56baeaae05bd2a1837a46045
+
   optarg:
     git: https://github.com/amberframework/optarg.git
     version: 0.8.0
@@ -103,10 +103,6 @@ shards:
   pool:
     git: https://github.com/ysbaddaden/pool.git
     version: 0.2.3
-
-  protobuf:
-    git: https://github.com/jeromegn/protobuf.cr.git
-    version: 2.2.1+git.commit.0bee69cfbd6656cbe310822162baef5f593e681a
 
   quartz_mailer:
     git: https://github.com/amberframework/quartz-mailer.git

@@ -47,8 +47,8 @@ dependencies:
   micrate:
     github: amberframework/micrate
 
-  grpc:
-    github: jgaskins/grpc
+  nats:
+    github: nats-io/nats.cr
 
 development_dependencies:
   garnet_spec:

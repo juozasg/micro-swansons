@@ -1,9 +1,0 @@
----
-version: 1.0
-shards:
-  protobuf:
-    git: https://github.com/jeromegn/protobuf.cr.git
-    version: 2.2.1+git.commit.0bee69cfbd6656cbe310822162baef5f593e681a
-  grpc:
-    git: https://github.com/jgaskins/grpc.git
-    version: 0.1.4

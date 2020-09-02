@@ -1,9 +1,8 @@
 
 require "../protobufs/swanson.pb"
 require "../protobufs/swanson_services.pb"
-require "grpc"
+require "nats"
 require "grpc/http2"
-
 
 class SwansonWorldHandler < SwansonWorld
   def create(swanson : Swanson) : Result
@@ -13,22 +12,22 @@ class SwansonWorldHandler < SwansonWorld
 end
 
 class SwansonProxy
-  def self.start_grpc_http2_server
-    grpc = GRPC::Server.new
-    grpc << SwansonWorldHandler.new
+  def self.start_nats_server
+    # grpc = GRPC::Server.new
+    # grpc << SwansonWorldHandler.new
 
-    server = HTTP2::ClearTextServer.new([grpc]) # TLS isn't supported yet
-    spawn do
-    end
-    puts("gRPC HTTP/2 listening on 0.0.0.0:5000")
-    server.listen "0.0.0.0", 50000
-    puts("done listening")
+    # server = HTTP2::ClearTextServer.new([grpc]) # TLS isn't supported yet
+    # spawn do
+    # end
+    # puts("gRPC HTTP/2 listening on 0.0.0.0:5000")
+    # server.listen "0.0.0.0", 50000
+    # puts("done listening")
 
-    # send out initial message to websocket
-    spawn do
-      sleep 0.1
-      SwansonProxy.websocket_rpc_spawn("yooooo--- swansons await grpc messages on PORT 50000")
-    end
+    # # send out initial message to websocket
+    # spawn do
+    #   sleep 0.1
+    #   SwansonProxy.websocket_rpc_spawn("yooooo--- swansons await grpc messages on PORT 50000")
+    # end
   end
     
   def self.websocket_rpc_spawn(body : String)
