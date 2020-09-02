@@ -1,0 +1,17 @@
+name: protobuf
+version: 2.2.1
+
+authors:
+  - Jerome Gravel-Niquet <jeromegn@gmail.com>
+
+scripts:
+  postinstall: shards build
+
+executables:
+  - protoc-gen-crystal
+
+targets:
+  protoc-gen-crystal:
+    main: bin/protoc-gen-crystal.cr
+
+license: MIT

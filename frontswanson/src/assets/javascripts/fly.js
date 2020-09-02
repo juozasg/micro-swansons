@@ -24,8 +24,8 @@ const moveEntity = (e) => {
     e.style.left = (rect.left + velx) + "px";
     e.style.top = (rect.top + vely) + 'px';
 
-    e.setAttribute('data-velx', velx + (Math.random() / 2 - 0.25));
-    e.setAttribute('data-vely', vely + (Math.random() / 2 - 0.25));
+    e.setAttribute('data-velx', velx + (Math.random() / 2 - 0.25)/4);
+    e.setAttribute('data-vely', vely + (Math.random() / 2 - 0.25)/4);
 }
 
 
