@@ -1,11 +1,11 @@
 require "nats"
 
 class SwansonProxy
-  def self.start_nats_server
-    nc = NATS::Connection.new("demo.nats.io")
-    nc.subscribe("swanson-rpc") { |msg|SwansonProxy.websocket_rpc_send("NATS: #{msg}")}
-    nc.publish("swanson-rpc", "swanson-rpc is ready")
+  @@nc = NATS::Connection.new("demo.nats.io")
+  @@nc.subscribe("swanson-rpc") { |msg|SwansonProxy.websocket_rpc_send("NATS: #{msg}")}
 
+  def self.heartbeat_swanson_rpc
+    @@nc.publish("swanson-rpc", "swanson-rpc is ready")
 
     # # send out initial message to websocket
     spawn do

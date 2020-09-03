@@ -1,0 +1,6 @@
+version: 2.0
+shards:
+  nats:
+    git: https://github.com/nats-io/nats.cr.git
+    version: 0.0.2+git.commit.aa4979137c5d98fa56baeaae05bd2a1837a46045
+

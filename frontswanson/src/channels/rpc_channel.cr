@@ -5,7 +5,7 @@ require "kilt/slang"
 class RpcChannel < Amber::WebSockets::Channel
   def handle_joined(client_socket, message)
     puts "WebSocket RpcChannel browser joined"
-    SwansonProxy.start_nats_server
+    SwansonProxy.heartbeat_swanson_rpc
   end
 
   def handle_message(client_socket, message)

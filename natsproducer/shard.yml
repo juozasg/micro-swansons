@@ -1,0 +1,7 @@
+name: natsproducer
+version: 0.1.0
+
+dependencies:
+  nats:
+    github: nats-io/nats.cr
+
