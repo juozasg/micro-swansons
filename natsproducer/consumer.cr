@@ -5,4 +5,4 @@ nc.subscribe("swanson-rpc") do |msg|
   puts("Read NATS: #{msg}")
 end
 
-
+sleep 3
